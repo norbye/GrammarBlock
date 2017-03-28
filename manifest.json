@@ -1,0 +1,12 @@
+{
+"name":"GrammarBlock",
+"description":"http://stackoverflow.com/questions/14068879",
+"version":"1",
+"manifest_version":2,
+"content_scripts": [
+    {
+      "matches": ["https://www.facebook.com/messages/*"],
+      "js": ["script.js"]
+    }
+  ]
+}
