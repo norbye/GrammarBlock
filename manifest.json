@@ -1,6 +1,6 @@
 {
 "name":"GrammarBlock",
-"description":"http://stackoverflow.com/questions/14068879",
+"description":"http://dev.norbye.com/grammarblock.html",
 "version":"1",
 "manifest_version":2,
 "content_scripts": [

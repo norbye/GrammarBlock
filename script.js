@@ -15,6 +15,32 @@
 */
 
 if (document.title.indexOf("Messenger") != -1) {
-    //Creating Elements
-    
+    scanPage();
+}
+
+document.body.onload = scanPage;
+
+function scanPage(){
+    var message_wrappers = document.getElementsByClassName("_1t_p");
+    for(var i = 0; i < message_wrappers.length; i++){
+        var name = message_wrappers[i].getElementsByClassName("_41ud")[0].getElementsByTagName("h5")[0].children[0].children[0].innerHTML;
+        var messages = message_wrappers[i].getElementsByClassName("_41ud")[0].getElementsByClassName("_3058");
+        //Loop through the message_wrappers
+        for(var x = 0; x < messages.length; x++){
+            var message = messages[x].getElementsByClassName("_aok")[0].getElementsByClassName("_3oh-")[0].innerHTML;
+            message = str_replace(message, 'lzm', 'liksom');
+            message = str_replace(message, 'idee', 'idé');
+            message = str_replace(message, 'mlder', 'meldinger');
+            console.log(message);
+            document.getElementsByClassName("_1t_p")[i].getElementsByClassName("_41ud")[0].getElementsByClassName("_3058")[x].getElementsByClassName("_aok")[0].getElementsByClassName("_3oh-")[0].innerHTML = message;
+        }
+    }
+}
+
+function str_replace(str, replace, replaceWith){
+    str = str.replace(' ' + replace + ' ', ' ' + replaceWith + ' ');
+    str = str.replace(' ' + replace + '?', ' ' + replaceWith + '?');
+    str = str.replace(' ' + replace + '!', ' ' + replaceWith + '!');
+    str = str.replace(' ' + replace + '.', ' ' + replaceWith + '.');
+    return str;
 }
